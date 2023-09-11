@@ -16,6 +16,6 @@ I included the Books.txt in the directory of the project, so all that should be 
 In that file is 3 random books ordered in this format: Book ID#, Title of Book, Author of Book.
 
 When entering a incorrect option, you will be met with an appropriate response. Entering a non numerical character will also 
-give a the appropriate response.
+give the appropriate response.
 
 This was compiled with the recommended IDE IntelliJ IDEA with Java 17
