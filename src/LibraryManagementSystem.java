@@ -12,8 +12,9 @@ import java.util.List;
  *
  * This class represents the "Library Management System (LMS)" for
  * part(2) of the SDLC Assignment. The goal of this system is for users
- * to add or remove books to and from the collection as well
- * as listing all the books of the collection.
+ * to add or remove books to and from the collection,
+ * listing all the books of the collection, as well as
+ * functionality for checking in and out books.
  */
 class LibraryManagementSystem {
     private List<Book> collection = new ArrayList<>();   //lists book from collection
@@ -47,11 +48,11 @@ class LibraryManagementSystem {
         //If path or file name is wrong or file type is not correct throw following response
     }
 
-    public boolean removeBookById(int bookId) {          //removes book from collection
+    public boolean removeBookByBarcode(int bookId) {          //removes book from collection
         Iterator<Book> iterator = collection.iterator();
         while (iterator.hasNext()) {
             Book book = iterator.next();
-            if (book.getId() == bookId) {
+            if (book.getBarcode() == bookId) {
                 iterator.remove();
                 System.out.println("Book successfully removed.");
                 return true;
@@ -68,4 +69,31 @@ class LibraryManagementSystem {
         //listAllBooks used to return the entire collection of books
 
     }
+    //Expanded functionality for module 6, additional code for checking in and out books
+    public boolean checkOutBookByBarcode(int barcode) {
+        for (Book book : collection) {
+            if (book.getBarcode() == barcode && !book.isCheckedOut()) {
+                book.setCheckedOut(true);
+                System.out.println("Book checked out successfully.");
+                return true;
+            }
+        }
+        System.out.println("Book not found or already checked out.");
+        return false;
+    }
+
+    public boolean checkInBookByBarcode(int barcode) {
+        for (Book book : collection) {
+            if (book.getBarcode() == barcode && book.isCheckedOut()) {
+                book.setCheckedOut(false);
+                System.out.println("Book checked in successfully.");
+                return true;
+            }
+        }
+        System.out.println("Book not found or not checked out.");
+        return false;
+    }
 }
+
+
+

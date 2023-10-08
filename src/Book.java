@@ -5,24 +5,26 @@
  * Date: 09/10/2023
  *
  * This is the "book" class for part(2) of the SDLC Assignment.
- * This is the area that is essential for getting the book ID,
- * titles and authors.
+ * This is the area that is essential for getting the book barcode,
+ * titles and authors, as well as handling the function for checking
+ * in and out books from the collection.
  */
 
 class Book {
-    private int id;
+    private int barcode;
     private String title;
     private String author;
+    private boolean checkedOut;
 
-    public Book(int id, String title, String author) {
-        this.id = id;
+    public Book(int barcode, String title, String author) {
+        this.barcode = barcode;
         this.title = title;
         this.author = author;
+        this.checkedOut = false;
     }
 
-    //getter methods used to retrieve book ID, title and authors of books
-    public int getId() {
-        return id;
+    public int getBarcode() {
+        return barcode;
     }
 
     public String getTitle() {
@@ -31,5 +33,13 @@ class Book {
 
     public String getAuthor() {
         return author;
+    }
+    //Expanded functionality for module 6
+    public boolean isCheckedOut() {
+        return checkedOut;
+    }
+
+    public void setCheckedOut(boolean checkedOut) {
+        this.checkedOut = checkedOut;
     }
 }
