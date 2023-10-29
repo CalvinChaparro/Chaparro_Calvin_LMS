@@ -30,7 +30,11 @@ For Module 6 - Software Implementation Phase 1 - Logic and Functionality, expand
 
 For Module 7 - Software Testing Assignment, we were instructed to use junit testing to run a variety of unit tests to verify that books can be added, removed and checked out or in. I attempted to set up JUnit in my project in IntelliJ, but met some difficulty. Working with the tutorial provided I was able to get my test set up but unfortunately not able to identify the classes in my project to successfully run the tests. I will need to continue working with this and find a solution.
 
+10/29/2023
 
+For this commit, the GUI has been implemented for the LMS. By running "LibraryManagementSystemGUI", the user will be presented the interface that allows them to navigate through the program. When selecting "Add Books", enter in the box: Books.txt, and the books from that file will be added and displayed on the text box below.
+
+I checked for any possible errors, if the user enters an incorrect integer or non numerical character, they will be presented with the appropriate response.
 
 This was compiled with the recommended IDE IntelliJ IDEA with Java 17
 
