@@ -10,16 +10,16 @@ import java.util.List;
  * Professor: Mary Walauskis
  * Date: 09/10/2023
  *
- * This class represents the "Library Management System (LMS)" for
- * part(2) of the SDLC Assignment. The goal of this system is for users
+ * This class represents the "Library Management System (LMS)".
+ * The goal of this system is for users
  * to add or remove books to and from the collection,
  * listing all the books of the collection, as well as
- * functionality for checking in and out books.
+ * functionality for checking in and out books. This Works directly with the GUI
  */
 class LibraryManagementSystem {
     private List<Book> collection = new ArrayList<>();   //lists book from collection
 
-    public void addBooksFromFile(String filePath) {
+    public boolean addBooksFromFile(String filePath) {
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -37,15 +37,17 @@ class LibraryManagementSystem {
                     //If format of file is not entered properly it is skipped into the next line
                 }
             }
-            //
             System.out.println("Books successfully added to collection.");
+            return true;
         } catch (FileNotFoundException e) {
             System.out.println("File not found. Please check path or name");
         } catch (IOException e) {
             System.out.println("Error reading the selected file.");
         }
+        // If path or file name is wrong or file type is not correct, return false, adjusted boolean to be compatible with GUI
 
-        //If path or file name is wrong or file type is not correct throw following response
+
+        return false;
     }
 
     public boolean removeBookByBarcode(int bookId) {          //removes book from collection
