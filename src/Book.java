@@ -1,26 +1,19 @@
-/**
- * By: Calvin Chaparro (Tutors Elvis F., Nicholas L., BROS_ETT)
- * Course: CEN-3024C
- * Professor: Mary Walauskis
- * Date: 09/10/2023
- *
- * This is the "book" class for part(2) of the SDLC Assignment.
- * This is the area that is essential for getting the book barcode,
- * titles and authors, as well as handling the function for checking
- * in and out books from the collection.
- */
 
-class Book {
+public class Book {
     private int barcode;
     private String title;
     private String author;
-    private boolean checkedOut;
+    private String genre;
+    private String status;
+    private String dueDate;
 
-    public Book(int barcode, String title, String author) {
+    public Book(int barcode, String title, String author, String genre, String status, String dueDate) {
         this.barcode = barcode;
         this.title = title;
         this.author = author;
-        this.checkedOut = false;
+        this.genre = genre;
+        this.status = status;
+        this.dueDate = dueDate;
     }
 
     public int getBarcode() {
@@ -34,12 +27,25 @@ class Book {
     public String getAuthor() {
         return author;
     }
-    //Expanded functionality for module 6
-    public boolean isCheckedOut() {
-        return checkedOut;
+
+    public String getGenre() {
+        return genre;
     }
 
-    public void setCheckedOut(boolean checkedOut) {
-        this.checkedOut = checkedOut;
+    public String getStatus() {
+        return status;
     }
+
+    public String getDueDate() {
+        return dueDate;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setDueDate(String dueDate) {
+        this.dueDate = dueDate;
+    }
+
 }
