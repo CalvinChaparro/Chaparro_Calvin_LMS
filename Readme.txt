@@ -27,7 +27,9 @@ For Module 6 - Software Implementation Phase 1 - Logic and Functionality, expand
 
 For Module 7 - Software Testing Assignment, we were instructed to use junit testing to run a variety of unit tests to verify that books can be added, removed and checked out or in. I attempted to set up JUnit in my project in IntelliJ, but met some difficulty. Working with the tutorial provided I was able to get my test set up but unfortunately not able to identify the classes in my project to successfully run the tests. I will need to continue working with this and find a solution.
 
+11/22/2023
 
+For the Module 9 submission, I updated all classes to now pull from a database instead of a .txt file. I attempted to get the LMS connected to the library.db file that is located in the root directory, but unfortunately was unsuccessful. I will need to continue to check my file directory for the database and see what may be causing the LMS to not load from the database file included.
 
 This was compiled with the recommended IDE IntelliJ IDEA with Java 17
 
