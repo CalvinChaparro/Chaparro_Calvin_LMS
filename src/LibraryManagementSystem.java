@@ -1,10 +1,19 @@
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-class LibraryManagementSystem {
+
+/**
+ * The core class for the Library Management System.
+ * Manages the library collection, database initialization, and book transactions.
+ */
+public class LibraryManagementSystem {
     private static final String DATABASE_URL = "jdbc:sqlite:library.db";
     private List<Book> collection = new ArrayList<>();
 
+    /**
+     * Constructs a new LibraryManagementSystem.
+     * Initializes the database and loads books from the database on creation.
+     */
     public LibraryManagementSystem() {
 
         initializeDatabase();
@@ -12,6 +21,9 @@ class LibraryManagementSystem {
         loadBooksFromDatabase();
     }
 
+    /**
+     * Initializes the SQLite database by creating the books table if it does not exist.
+     */
     private void initializeDatabase() {
         try (Connection connection = DriverManager.getConnection(DATABASE_URL);
              Statement statement = connection.createStatement()) {
@@ -29,6 +41,9 @@ class LibraryManagementSystem {
         }
     }
 
+    /**
+     * Loads books from the database into the local collection.
+     */
     private void loadBooksFromDatabase() {
         try (Connection connection = DriverManager.getConnection(DATABASE_URL);
              Statement statement = connection.createStatement()) {
@@ -50,20 +65,21 @@ class LibraryManagementSystem {
         }
     }
 
-    public boolean addBooksFromFile(String filePath) {
-        // removed for now, no longer using .txt file
-        return false;
-    }
-
-    public boolean removeBookByBarcode(int bookId) {
-        // removed for now, no longer using .txt file
-        return false;
-    }
-
+    /**
+     * Retrieves a list of all books in the collection.
+     *
+     * @return The list of books in the collection.
+     */
     public List<Book> listAllBooks() {
         return collection;
     }
 
+    /**
+     * Checks out a book by updating its status and due date in the database and local collection.
+     *
+     * @param barcode The barcode of the book to check out.
+     * @return True if the book is successfully checked out, false otherwise.
+     */
     public boolean checkOutBookByBarcode(int barcode) {
         try (Connection connection = DriverManager.getConnection(DATABASE_URL);
              PreparedStatement preparedStatement = connection.prepareStatement(
@@ -95,6 +111,12 @@ class LibraryManagementSystem {
         }
     }
 
+    /**
+     * Checks in a book by updating its status and due date in the database and local collection.
+     *
+     * @param barcode The barcode of the book to check in.
+     * @return True if the book is successfully checked in, false otherwise.
+     */
     public boolean checkInBookByBarcode(int barcode) {
         try (Connection connection = DriverManager.getConnection(DATABASE_URL);
              PreparedStatement preparedStatement = connection.prepareStatement(

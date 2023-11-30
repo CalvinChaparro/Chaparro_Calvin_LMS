@@ -1,7 +1,19 @@
 import java.util.List;
 import java.util.Scanner;
+
+/**
+ * The main class for the Library Management System (LMS) application.
+ * Allows users to interact with the LMS through a console menu.
+ */
+
 public class Main {
+    /**
+     * The entry point of the application.
+     *
+     * @param args The command-line arguments
+     */
     public static void main(String[] args) {
+        // Initialize the Library Management System
         LibraryManagementSystem lms = new LibraryManagementSystem();
         Scanner scanner = new Scanner(System.in);
 

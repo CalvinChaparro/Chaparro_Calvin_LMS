@@ -4,10 +4,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
+/**
+ * The graphical user interface (GUI) class for the Library Management System (LMS).
+ * Provides a window with buttons for interacting with the LMS and displays information in a text area.
+ */
 
 public class LibraryManagementSystemGUI extends JFrame {
     private final LibraryManagementSystem lms;
     private final JTextArea outputTextArea;
+
 
     public LibraryManagementSystemGUI() {
         lms = new LibraryManagementSystem();
@@ -75,6 +80,9 @@ public class LibraryManagementSystemGUI extends JFrame {
         setLocationRelativeTo(null);
     }
 
+    /**
+     * Updates the text area with information about all books in the collection.
+     */
     private void updateOutput() {
         outputTextArea.setText("");
         List<Book> books = lms.listAllBooks();
@@ -91,6 +99,12 @@ public class LibraryManagementSystemGUI extends JFrame {
             }
         }
     }
+
+    /**
+     * Main front point of application. Creates and displays the LMS GUI.
+     *
+     * @param args The command-line arguments (unused).
+     */
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {

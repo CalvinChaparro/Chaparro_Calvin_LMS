@@ -31,6 +31,12 @@ For Module 7 - Software Testing Assignment, we were instructed to use junit test
 
 For the Module 9 submission, I updated all classes to now pull from a database instead of a .txt file. I attempted to get the LMS connected to the library.db file that is located in the root directory, but unfortunately was unsuccessful. I will need to continue to check my file directory for the database and see what may be causing the LMS to not load from the database file included.
 
+
+11/29/2023 
+
+Per Module 11 assignments requirements, I created and added the JavaDoc generated from IntelliJ. I added notes to each class explaining what each do and also updated all classes with the most up to date code. The program currently still does not pull from the library.db file, and I am still working on fixing that issue. 
+
+
 This was compiled with the recommended IDE IntelliJ IDEA with Java 17
 
 
